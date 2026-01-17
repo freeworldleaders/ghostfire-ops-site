@@ -1,5 +1,7 @@
 name: Deploy Pages
 on:
+  workflow_dispatch:
+  push:
   push:
     branches: [ main ]
 permissions:
@@ -20,3 +22,4 @@ jobs:
           path: .
       - id: deployment
         uses: actions/deploy-pages@v4
+
