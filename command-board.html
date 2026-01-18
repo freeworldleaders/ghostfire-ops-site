@@ -1,1 +1,123 @@
-<html><body>Command Board</body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Kingdom Command Board</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;margin:0;background:#0b0f14;color:#e5e7eb}
+  a{color:#e5e7eb;text-decoration:none}
+  a:hover{text-decoration:underline}
+  header{border-bottom:1px solid rgba(229,231,235,.15);background:#070a0e;position:sticky;top:0;z-index:10}
+  .wrap{max-width:1100px;margin:0 auto;padding:14px 16px}
+  .title{font-weight:900;letter-spacing:.3px}
+  .muted{opacity:.82}
+  main{max-width:1100px;margin:0 auto;padding:22px 16px 44px}
+  .grid{display:grid;gap:12px}
+  .grid2{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(360px,1fr))}
+  .grid3{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .card{border:1px solid rgba(229,231,235,.14);border-radius:16px;padding:14px;background:rgba(255,255,255,.02)}
+  .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(229,231,235,.18);border-radius:999px;padding:6px 10px;font-size:12px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:12px;border:1px solid rgba(229,231,235,.24);font-weight:800}
+  .btn.primary{border-color:#e5e7eb;background:#e5e7eb;color:#0b0f14}
+  code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+  pre{white-space:pre-wrap;word-break:break-word;background:rgba(255,255,255,.03);border:1px solid rgba(229,231,235,.12);border-radius:14px;padding:12px;margin:0}
+  .kpi{font-size:12px;opacity:.85}
+  .kpi b{font-size:14px;opacity:1}
+</style>
+</head>
+<body>
+  <header>
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <div class="title">👑 Kingdom Command Board</div>
+      <div class="pill">HIGG • High-Integrity Governance Grid</div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn" href="/">Home</a>
+      <a class="btn" href="/kingdom-solutions/">Docs</a>
+      <a class="btn primary" href="/upload.html">Upload</a>
+    </div>
+  </div>
+</header>
+  <main>
+    <div class="grid" style="gap:16px">
+      <div class="card">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <div>
+            <div style="font-size:22px;font-weight:900;margin-bottom:6px">Dominion Stack: Entertainment → Archive → Fair Payouts</div>
+            <div class="muted">One story, many formats. Authority lives in canon docs + Throne. Agents produce drafts only.</div>
+          </div>
+          <div class="grid" style="gap:8px;min-width:260px">
+            <div class="kpi"><b>Primary CTA</b><br/>Upload your testimony. Preserve your lineage. Get paid fairly.</div>
+            <div class="kpi"><b>Public proof</b><br/><a href="/kingdom-solutions/">/kingdom-solutions/</a> (docs index)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div style="font-weight:900;font-size:16px;margin-bottom:8px">Quick Links</div>
+          <div class="grid3">
+            <div class="card"><a href="/about.html">About / Manifesto</a><div class="muted">grounded mission</div></div>
+            <div class="card"><a href="/creators.html">Creators</a><div class="muted">how testimonies become media</div></div>
+            <div class="card"><a href="/trust-safety.html">Trust & Safety</a><div class="muted">plain language</div></div>
+            <div class="card"><a href="/faq.html">FAQ</a><div class="muted">consent, payouts, takedowns</div></div>
+            <div class="card"><a href="/kingdom-solutions/">Canon Docs</a><div class="muted">PRD, architecture, agreement</div></div>
+            <div class="card"><a href="/protocols/HIGG_PROTOCOLS.html">Protocols</a><div class="muted">high gates + runbook</div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="font-weight:900;font-size:16px;margin-bottom:8px">HIGG Pillars</div>
+          <div class="grid3">
+            <div class="card"><div style="font-weight:900">Consent</div><div class="muted">Plain language + revocation.</div><div style="margin-top:10px" class="pill">Gate: publish requires consent</div></div>
+            <div class="card"><div style="font-weight:900">Provenance</div><div class="muted">Chain-of-custody for assets and edits.</div><div style="margin-top:10px" class="pill">Gate: provenance log exists</div></div>
+            <div class="card"><div style="font-weight:900">Safety</div><div class="muted">Minors/vulnerable redactions + reporting.</div><div style="margin-top:10px" class="pill">Gate: safety checks pass</div></div>
+            <div class="card"><div style="font-weight:900">Payouts</div><div class="muted">Transparent rules + trackable status.</div><div style="margin-top:10px" class="pill">Gate: payout rules published</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <div style="font-weight:900;font-size:16px;margin-bottom:8px">High Protocols</div>
+          <div class="grid" style="gap:10px">
+            <div class="card"><div style="font-weight:900">Protocol 1 — Consent is the key</div><div class="muted">No consent = no publish. Revocation stops distribution forward.</div></div>
+            <div class="card"><div style="font-weight:900">Protocol 2 — Authority = Throne</div><div class="muted">Agents draft. Throne decides. Only canon ships.</div></div>
+            <div class="card"><div style="font-weight:900">Protocol 3 — Provenance or it didn’t happen</div><div class="muted">Every asset has source + timestamp + handler + permissions.</div></div>
+            <div class="card"><div style="font-weight:900">Protocol 4 — Safety overrides hype</div><div class="muted">Minors/doxxing/harm risk → redact or deny.</div></div>
+            <div class="card"><div style="font-weight:900">Protocol 5 — Payout transparency</div><div class="muted">Creators can see status, rules, and receipts.</div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div style="font-weight:900;font-size:16px;margin-bottom:8px">Runbook</div>
+          <pre>Set-Location "$env:USERPROFILE\code\ghostfire-ops-site"
+pwsh -File .\ops\HIGG-RUN.ps1</pre>
+
+          <div style="height:10px"></div>
+
+          <pre>Set-Location "$env:USERPROFILE\code\ghostfire-ops"
+Get-Content -Raw ".\docs\throne\SWEEP\config.json" | ConvertFrom-Json | Out-Null
+"OK"</pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-weight:900;font-size:16px;margin-bottom:8px">MVP Pipeline</div>
+        <div class="grid3">
+          <div class="card"><b>Upload</b><div class="muted">audio/video + notes + consent</div></div>
+          <div class="card"><b>Transcribe</b><div class="muted">accurate text + timestamps</div></div>
+          <div class="card"><b>Summarize</b><div class="muted">themes + structure</div></div>
+          <div class="card"><b>Draft</b><div class="muted">long-form narrative</div></div>
+          <div class="card"><b>Formats</b><div class="muted">audiobook + clips plan</div></div>
+          <div class="card"><b>Queue</b><div class="muted">publish only per consent</div></div>
+        </div>
+      </div>
+
+      <div class="muted" style="font-size:13px;margin-top:6px">Pin this page as the ops bridge.</div>
+    </div>
+  </main>
+</body>
+</html>

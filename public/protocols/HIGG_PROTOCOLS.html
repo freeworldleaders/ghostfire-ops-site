@@ -1,1 +1,105 @@
-<html><body>HIGG</body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <title>HIGG Protocols — Kingdom Solutions</title>
+  <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;margin:0;background:#0b0f14;color:#e5e7eb}
+  a{color:#e5e7eb;text-decoration:none}
+  a:hover{text-decoration:underline}
+  header{border-bottom:1px solid rgba(229,231,235,.15);background:#070a0e;position:sticky;top:0;z-index:10}
+  .wrap{max-width:1100px;margin:0 auto;padding:14px 16px}
+  .title{font-weight:900;letter-spacing:.3px}
+  .muted{opacity:.82}
+  main{max-width:1100px;margin:0 auto;padding:22px 16px 44px}
+  .grid{display:grid;gap:12px}
+  .grid2{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(360px,1fr))}
+  .grid3{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .card{border:1px solid rgba(229,231,235,.14);border-radius:16px;padding:14px;background:rgba(255,255,255,.02)}
+  .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(229,231,235,.18);border-radius:999px;padding:6px 10px;font-size:12px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:12px;border:1px solid rgba(229,231,235,.24);font-weight:800}
+  .btn.primary{border-color:#e5e7eb;background:#e5e7eb;color:#0b0f14}
+  code,pre{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+  pre{white-space:pre-wrap;word-break:break-word;background:rgba(255,255,255,.03);border:1px solid rgba(229,231,235,.12);border-radius:14px;padding:12px;margin:0}
+  .kpi{font-size:12px;opacity:.85}
+  .kpi b{font-size:14px;opacity:1}
+</style>
+</head>
+<body>
+  <header>
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <div class="title">👑 Kingdom Command Board</div>
+      <div class="pill">HIGG • High-Integrity Governance Grid</div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn" href="/">Home</a>
+      <a class="btn" href="/kingdom-solutions/">Docs</a>
+      <a class="btn primary" href="/upload.html">Upload</a>
+    </div>
+  </div>
+</header>
+  <main>
+    <div class="card">
+      <div style="font-size:26px;font-weight:900;margin-bottom:8px">HIGG Protocols</div>
+      <div class="muted">High-Integrity Governance Grid — rules that prevent chaos, exploitation, and drift.</div>
+    </div>
+
+    <div class="grid2" style="margin-top:14px">
+      <div class="card">
+        <div style="font-weight:900;font-size:16px;margin-bottom:8px">Gates (must-pass before publish)</div>
+        <pre>GATE A — Consent
+- Plain language consent captured
+- Allowed formats recorded (book/audio/clips)
+- Revocation documented
+- Name/alias + privacy settings saved
+
+GATE B — Provenance
+- Source file hash + timestamp
+- Handler log (who touched it)
+- Derivatives traced to source
+- Permissions inherited correctly
+
+GATE C — Safety
+- No minors exposed
+- No doxxing / private IDs
+- No harassment content
+- Sensitive claims flagged for review
+
+GATE D — Payouts
+- Payout rules visible to creator
+- Status tracking enabled
+- Revenue attribution defined
+- Revocation behavior defined</pre>
+      </div>
+
+      <div class="card">
+        <div style="font-weight:900;font-size:16px;margin-bottom:8px">Operating Protocols (daily)</div>
+        <pre>1) Canon is King
+- Authority is Throne + canon docs. Agents draft only.
+
+2) Never publish raw
+- Publish is always edited + permission-checked.
+
+3) Redact aggressively
+- Privacy > virality.
+
+4) No silent changes
+- Every edit has a reason + trace.
+
+5) Takedown discipline
+- Confirm requester identity
+- Remove from your channels fast
+- Document actions</pre>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <div style="font-weight:900;font-size:16px;margin-bottom:8px">HIGG Run</div>
+      <pre>Set-Location "$env:USERPROFILE\code\ghostfire-ops-site"
+pwsh -File .\ops\HIGG-RUN.ps1</pre>
+    </div>
+  </main>
+</body>
+</html>
