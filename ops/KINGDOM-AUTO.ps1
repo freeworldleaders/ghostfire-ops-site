@@ -5,7 +5,8 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-Set-StrictMode -Version Latest
+Set-StrictMode -Version Latest
+$script:fail = $false
 
 function Ensure-Dir([string]$absDir) {
   if (-not (Test-Path $absDir)) { New-Item -ItemType Directory -Force $absDir | Out-Null }
@@ -176,6 +177,5 @@ if (-not $NoHigg) {
     Warn "HIGG runner missing (ops/HIGG-RUN.ps1)"
   }
 }
-
-if ($script:fail) { throw "KINGDOM-AUTO FAILED (see FAIL lines)" }
+if ($script:fail -eq $true) { throw "KINGDOM-AUTO FAILED (see FAIL lines)" }
 Pass "KINGDOM-AUTO COMPLETE"
