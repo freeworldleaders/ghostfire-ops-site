@@ -1,7 +1,6 @@
 $ErrorActionPreference = "Stop"
-Set-StrictMode -Version Latest
-$script:fail = $false
-
+Set-StrictMode -Version Latest
+. (Join-Path $PSScriptRoot "_ENGINE-CORE.ps1")
 # Raw = fastest hard gates. Exit code 0 ok, 1 fail.
 function Ok($m){ Write-Host ("OK: " + $m) -ForegroundColor Green }
 function Bad($m){ Write-Host ("BAD: " + $m) -ForegroundColor Red; $script:fail = $true }

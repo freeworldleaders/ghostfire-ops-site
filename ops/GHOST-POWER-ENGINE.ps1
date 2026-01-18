@@ -1,7 +1,6 @@
 $ErrorActionPreference = "Stop"
-Set-StrictMode -Version Latest
-$script:fail = $false
-
+Set-StrictMode -Version Latest
+. (Join-Path $PSScriptRoot "_ENGINE-CORE.ps1")
 function Info($m){ Write-Host ("INFO: " + $m) -ForegroundColor Cyan }
 function Warn($m){ Write-Host ("WARN: " + $m) -ForegroundColor Yellow }
 function Pass($m){ Write-Host ("PASS: " + $m) -ForegroundColor Green }

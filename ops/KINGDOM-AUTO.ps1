@@ -5,9 +5,8 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
-Set-StrictMode -Version Latest
-$script:fail = $false
-
+Set-StrictMode -Version Latest
+. (Join-Path $PSScriptRoot "_ENGINE-CORE.ps1")
 function Ensure-Dir([string]$absDir) {
   if (-not (Test-Path $absDir)) { New-Item -ItemType Directory -Force $absDir | Out-Null }
 }
