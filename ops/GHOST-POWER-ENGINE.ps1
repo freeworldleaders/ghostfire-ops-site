@@ -1,5 +1,6 @@
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
+$script:fail = $false
 
 function Info($m){ Write-Host ("INFO: " + $m) -ForegroundColor Cyan }
 function Warn($m){ Write-Host ("WARN: " + $m) -ForegroundColor Yellow }
