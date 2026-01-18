@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ARCHITECTURE — Kingdom Solutions</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;margin:0}
+    header{border-bottom:1px solid #e5e7eb; padding:18px 16px}
+    main{max-width:900px;margin:0 auto;padding:24px 16px}
+    pre,code{white-space:pre-wrap; word-break:break-word}
+    a{color:inherit}
+    .muted{opacity:.8}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="max-width:900px;margin:0 auto;">
+      <div style="font-weight:900;font-size:18px;">Kingdom Solutions</div>
+      <div class="muted"><a href="./index.html">← Docs Index</a></div>
+    </div>
+  </header>
+  <main>
+    <h1>ARCHITECTURE</h1>
+    <pre style="border:1px solid #e5e7eb;border-radius:16px;padding:16px;"># Architecture (MVP)
+
+## Overview
+- **Web**: Next.js (public site + authenticated dashboard)
+- **API**: Node/Next API routes or separate service
+- **DB**: Postgres
+- **Storage**: S3-compatible bucket
+- **Transcription**: external provider, invoked only when user opts in
+- **Payments**: Stripe Connect or equivalent (later)
+
+## Security
+- TLS everywhere
+- Private buckets + signed URLs
+- Role-based access control
+- Audit logging for access + exports
+
+## Assistive AI pipeline (optional)
+- suggestion-only; never auto-publish
+- user sees diff / can undo
+- no training on private stories
+
+```mermaid
+flowchart LR
+A[Record/Upload] --&gt; B{Opt-in Transcription?}
+B -- No --&gt; C[Manual Edit]
+B -- Yes --&gt; D[Transcribe Job]
+D --&gt; C[Edit + Organize]
+C --&gt; E{Opt-in Export?}
+E -- No --&gt; F[Private Archive]
+E -- Yes --&gt; G[Generate Outputs]
+G --&gt; H{Opt-in Share/Monetize?}
+H -- No --&gt; F
+H -- Yes --&gt; I[Publish / Storefront]
+```
+</pre>
+  </main>
+</body>
+</html>

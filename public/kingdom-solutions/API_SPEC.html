@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>API_SPEC — Kingdom Solutions</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;margin:0}
+    header{border-bottom:1px solid #e5e7eb; padding:18px 16px}
+    main{max-width:900px;margin:0 auto;padding:24px 16px}
+    pre,code{white-space:pre-wrap; word-break:break-word}
+    a{color:inherit}
+    .muted{opacity:.8}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="max-width:900px;margin:0 auto;">
+      <div style="font-weight:900;font-size:18px;">Kingdom Solutions</div>
+      <div class="muted"><a href="./index.html">← Docs Index</a></div>
+    </div>
+  </header>
+  <main>
+    <h1>API_SPEC</h1>
+    <pre style="border:1px solid #e5e7eb;border-radius:16px;padding:16px;"># API Spec (v1)
+
+Base URL: `/api/v1`
+
+## Auth
+- `POST /auth/signup`
+- `POST /auth/login`
+- `POST /auth/logout`
+- `GET  /auth/me`
+
+## Stories
+- `POST /stories` → create story
+- `GET  /stories` → list my stories
+- `GET  /stories/:id` → get story
+- `PATCH /stories/:id` → update metadata/visibility
+- `DELETE /stories/:id` → delete story
+
+## Assets (Uploads)
+- `POST /stories/:id/assets` → upload (audio/video/text)
+- `GET  /stories/:id/assets` → list assets
+- `DELETE /assets/:assetId`
+
+## Transcription (opt-in)
+- `POST /stories/:id/transcribe` → create transcription job
+- `GET  /jobs/:jobId` → job status
+
+## Exports
+- `POST /stories/:id/exports` → create export (book draft, script)
+- `GET  /stories/:id/exports` → list exports
+- `GET  /exports/:exportId` → download
+
+## Reports
+- `POST /reports` → report content
+- `GET  /reports/:id` → status
+
+## Admin (MVP minimal)
+- `GET /admin/reports`
+- `PATCH /admin/reports/:id` → resolve/action
+</pre>
+  </main>
+</body>
+</html>

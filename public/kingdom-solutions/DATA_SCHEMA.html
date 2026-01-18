@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DATA_SCHEMA — Kingdom Solutions</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;margin:0}
+    header{border-bottom:1px solid #e5e7eb; padding:18px 16px}
+    main{max-width:900px;margin:0 auto;padding:24px 16px}
+    pre,code{white-space:pre-wrap; word-break:break-word}
+    a{color:inherit}
+    .muted{opacity:.8}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="max-width:900px;margin:0 auto;">
+      <div style="font-weight:900;font-size:18px;">Kingdom Solutions</div>
+      <div class="muted"><a href="./index.html">← Docs Index</a></div>
+    </div>
+  </header>
+  <main>
+    <h1>DATA_SCHEMA</h1>
+    <pre style="border:1px solid #e5e7eb;border-radius:16px;padding:16px;"># Data Schema (v1)
+
+## users
+- id (uuid)
+- email (string, unique)
+- created_at (timestamp)
+- preferences (json)
+
+## stories
+- id (uuid)
+- user_id (uuid FK users.id)
+- title (string)
+- description (text)
+- visibility (enum: private | unlisted | public)
+- status (enum: draft | active | archived)
+- created_at, updated_at (timestamp)
+
+## assets
+- id (uuid)
+- story_id (uuid FK stories.id)
+- type (enum: audio | video | text | image)
+- storage_url (string)
+- original_filename (string)
+- size_bytes (int)
+- created_at (timestamp)
+
+## transcripts
+- id (uuid)
+- story_id (uuid)
+- asset_id (uuid)
+- provider (string)
+- status (enum: queued | running | done | failed)
+- text (longtext, nullable until done)
+- created_at, updated_at
+
+## exports
+- id (uuid)
+- story_id (uuid)
+- type (enum: book_draft | audiobook_script | clips_plan)
+- status (enum: queued | running | done | failed)
+- storage_url (string, nullable until done)
+- created_at, updated_at
+
+## reports
+- id (uuid)
+- reporter_user_id (uuid)
+- target_type (enum: story | asset | user)
+- target_id (uuid)
+- reason (string)
+- details (text)
+- status (enum: open | reviewing | resolved)
+- created_at, updated_at
+</pre>
+  </main>
+</body>
+</html>
