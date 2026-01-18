@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head><title>Engines — Kingdom Solutions</title><meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;margin:0;background:#0b0f14;color:#e5e7eb}
+  a{color:#e5e7eb;text-decoration:none}
+  a:hover{text-decoration:underline}
+  header{border-bottom:1px solid rgba(229,231,235,.15);background:#070a0e;position:sticky;top:0;z-index:10}
+  .wrap{max-width:1100px;margin:0 auto;padding:14px 16px}
+  .title{font-weight:900;letter-spacing:.3px}
+  .muted{opacity:.82}
+  main{max-width:1100px;margin:0 auto;padding:22px 16px 44px}
+  .grid{display:grid;gap:12px}
+  .grid3{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+  .card{border:1px solid rgba(229,231,235,.14);border-radius:16px;padding:14px;background:rgba(255,255,255,.02)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:12px;border:1px solid rgba(229,231,235,.24);font-weight:800}
+  .btn.primary{border-color:#e5e7eb;background:#e5e7eb;color:#0b0f14}
+  pre{white-space:pre-wrap;word-break:break-word;background:rgba(255,255,255,.03);border:1px solid rgba(229,231,235,.12);border-radius:14px;padding:12px;margin:0}
+</style></head>
+<body>
+<header>
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <div class="title">👑 Kingdom Solutions</div>
+      <div class="muted">Engines • Protocols • Gates</div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a class="btn" href="/">Home</a>
+      <a class="btn" href="/command-board.html">Board</a>
+      <a class="btn" href="/kingdom-solutions/">Docs</a>
+      <a class="btn primary" href="/upload.html">Upload</a>
+    </div>
+  </div>
+</header>
+<main>
+  <div class="card">
+    <div style="font-size:30px;font-weight:900;margin-bottom:8px">Engines</div>
+    <div class="muted">Operational control layers. Same mission. Different force modes.</div>
+  </div>
+
+  <div class="grid3" style="margin-top:14px">
+    <div class="card">
+      <div style="font-weight:900;font-size:16px">Power Engine</div>
+      <div class="muted" style="margin-top:6px">Orchestrates HIGG + opens Command Board.</div>
+      <div style="margin-top:10px"><a class="btn primary" href="/engines/power-engine.html">Open</a></div>
+    </div>
+    <div class="card">
+      <div style="font-weight:900;font-size:16px">Ghost Power Engine</div>
+      <div class="muted" style="margin-top:6px">Observer-only. Audits state. No writes.</div>
+      <div style="margin-top:10px"><a class="btn primary" href="/engines/ghost-power-engine.html">Open</a></div>
+    </div>
+    <div class="card">
+      <div style="font-weight:900;font-size:16px">Raw Power Engine</div>
+      <div class="muted" style="margin-top:6px">Fast hard gates. Exit-code truth.</div>
+      <div style="margin-top:10px"><a class="btn primary" href="/engines/raw-power-engine.html">Open</a></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <div style="font-weight:900;margin-bottom:8px">Run from repo root</div>
+    <pre>pwsh -NoProfile -File .\ops\POWER-ENGINE.ps1
+pwsh -NoProfile -File .\ops\GHOST-POWER-ENGINE.ps1
+pwsh -NoProfile -File .\ops\RAW-POWER-ENGINE.ps1</pre>
+  </div>
+</main>
+</body>
+</html>
