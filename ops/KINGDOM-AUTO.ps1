@@ -1,9 +1,8 @@
 param(
-  [switch]$NoHigg,
+  [switch]$Write,
+[switch]$NoHigg,
   [switch]$NoMirror,
-  [switch]$NoWrite = $true
 )
-
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 . (Join-Path $PSScriptRoot "_ENGINE-CORE.ps1")
@@ -106,7 +105,7 @@ function ReplaceOrInsertMdNav([string]$rel,[string]$nav) {
     }
   }
 
-  if (-not $NoWrite) {
+  if ($Write) {
     # Write UTF8 no BOM
     $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
     [System.IO.File]::WriteAllText($abs,$new,$utf8NoBom)
@@ -137,7 +136,7 @@ function ReplaceOrInsertHtmlNav([string]$rel,[string]$nav) {
     }
   }
 
-  if (-not $NoWrite) {
+  if ($Write) {
     $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
     [System.IO.File]::WriteAllText($abs,$new,$utf8NoBom)
   }
@@ -147,8 +146,7 @@ function ReplaceOrInsertHtmlNav([string]$rel,[string]$nav) {
 # ---------- RUN ----------
 $root = RepoRoot
 Info "KINGDOM-AUTO running at $root"
-
-if (-not $NoMirror) {
+if (-not $NoMirror -and $Write) {
   # If you keep canonical assets under /public, mirror to root so GitHub Pages paths work.
   if (Test-Path (Join-Path $root "public\kingdom-solutions")) { Mirror-Folder "public/kingdom-solutions" "kingdom-solutions" }
   if (Test-Path (Join-Path $root "public\protocols"))        { Mirror-Folder "public/protocols" "protocols" }

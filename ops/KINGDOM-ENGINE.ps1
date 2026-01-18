@@ -14,7 +14,7 @@ $repo = (Get-Location).Path
 if (-not (Test-Path (Join-Path $repo ".git"))) { throw "Run at repo root: $repo" }
 
 Info "KINGDOM-ENGINE start"
-pwsh -NoProfile -File (Join-Path $repo "ops\KINGDOM-AUTO.ps1") -NoHigg:$NoHigg -NoMirror:$NoMirror
+pwsh -NoProfile -File (Join-Path $repo "ops\KINGDOM-AUTO.ps1") -Write -NoHigg:$NoHigg -NoMirror:$NoMirror
 
 git add -A | Out-Null
 

@@ -30,7 +30,7 @@ $action = {
 
   Info "Change detected: $path"
   try {
-    pwsh -NoProfile -File (Join-Path $root "ops\KINGDOM-AUTO.ps1") | Out-Null
+    pwsh -NoProfile -File (Join-Path $root "ops\KINGDOM-AUTO.ps1") -Write | Out-Null
     Info "Auto refresh complete"
   } catch {
     Warn $_.Exception.Message
