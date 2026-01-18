@@ -49,4 +49,3 @@ function Write-Utf8NoBom {
   return $abs
 }
 
-Export-ModuleMember -Function Get-RepoRoot, Get-AbsPath, Ensure-ParentDir, Write-Utf8NoBom
