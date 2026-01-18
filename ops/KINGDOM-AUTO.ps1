@@ -7,6 +7,24 @@ param(
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 
+function Ensure-Dir([string]$absDir) {
+  if (-not (Test-Path $absDir)) { New-Item -ItemType Directory -Force $absDir | Out-Null }
+}
+
+function Mirror-Folder([string]$srcRel, [string]$dstRel) {
+  $root = RepoRoot
+  $src = Join-Path $root $srcRel
+  $dst = Join-Path $root $dstRel
+
+  if (-not (Test-Path $src)) { return }
+
+  Ensure-Dir $dst
+  Get-ChildItem -LiteralPath $dst -Force -ErrorAction SilentlyContinue |
+    Remove-Item -Recurse -Force -ErrorAction SilentlyContinue
+
+  Copy-Item -Recurse -Force (Join-Path $src '*') $dst
+}
+
 function Info($m){ Write-Host ("INFO: " + $m) -ForegroundColor Cyan }
 function Pass($m){ Write-Host ("PASS: " + $m) -ForegroundColor Green }
 function Warn($m){ Write-Host ("WARN: " + $m) -ForegroundColor Yellow }
