@@ -11,7 +11,6 @@
 ---
 
 <!-- KINGDOM_NAV -->
-**Navigation:** [Home](/) · [Canon Docs](/kingdom-solutions/) · [Command Board](/command-board.html) · [HIGG Protocols](/protocols/HIGG_PROTOCOLS.html)
+**Navigation:** [Home](/) · [Command Board](/command-board.html) · [Engines](/engines/) · [Canon Docs](/kingdom-solutions/) · [HIGG Protocols](/protocols/HIGG_PROTOCOLS.html) · [About](/about.html) · [Creators](/creators.html) · [Trust & Safety](/trust-safety.html) · [FAQ](/faq.html) · [Upload](/upload.html)
 
----
-GhostfireOps Pages: ONLINE
+---GhostfireOps Pages: ONLINE

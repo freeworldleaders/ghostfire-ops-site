@@ -1,9 +1,8 @@
 param(
   [switch]$Write,
-[switch]$NoHigg,
-  [switch]$NoMirror,
-)
-$ErrorActionPreference = "Stop"
+  [switch]$NoHigg,
+  [switch]$NoMirror
+)$ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
 . (Join-Path $PSScriptRoot "_ENGINE-CORE.ps1")
 function Ensure-Dir([string]$absDir) {
