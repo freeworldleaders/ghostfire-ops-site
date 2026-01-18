@@ -1,5 +1,6 @@
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
+$script:fail = $false
 
 # Raw = fastest hard gates. Exit code 0 ok, 1 fail.
 function Ok($m){ Write-Host ("OK: " + $m) -ForegroundColor Green }
@@ -19,7 +20,6 @@ foreach ($c in $checks) {
   $p = Join-Path $repo $c
   if (Test-Path $p) { Ok $c } else { Bad ("Missing " + $c) }
 }
-
-if ($script:fail) { exit 1 }
+if ((Get-Variable -Name fail -Scope Script -ErrorAction SilentlyContinue).Value -eq $true) { exit 1 }
 Ok "RAW POWER ENGINE PASS"
 exit 0
