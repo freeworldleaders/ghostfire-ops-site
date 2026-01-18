@@ -201,7 +201,7 @@ RunPwsh $raw
 
 Pass "ALL COMPLETE" }
 
-if ($dirtyLines.Count -gt 0) { $dirtyLines | Out-Host; Fail "Working tree is NOT clean after ALL (excluding ops/ALL.ps1)." }RunPwsh $ghost
+if (@($dirtyLines).Count -gt 0) { $dirtyLines | Out-Host; Fail "Working tree is NOT clean after ALL (excluding ops/ALL.ps1)." }RunPwsh $ghost
 RunPwsh $raw
 
 Pass "ALL COMPLETE"
