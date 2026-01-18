@@ -1,0 +1,26 @@
+{
+  "name": "GHOSTFIRE OPS",
+  "time": "2026-01-18T14:13:01-06:00",
+  "repo": "C:/Users/freew/code/ghostfire-ops-site",
+  "branch": "main",
+  "sha": "4f16cf5",
+  "ok": true,
+  "checks": [
+    {
+      "name": "KINGDOM.ps1",
+      "ok": true
+    },
+    {
+      "name": "ALL.ps1",
+      "ok": true
+    },
+    {
+      "name": "HIGG-RUN.ps1",
+      "ok": true
+    },
+    {
+      "name": "Command Board",
+      "ok": true
+    }
+  ]
+}

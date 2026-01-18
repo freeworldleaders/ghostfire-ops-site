@@ -122,7 +122,58 @@ Get-Content -Raw ".\docs\throne\SWEEP\config.json" | ConvertFrom-Json | Out-Null
 "OK"</pre>
         </div>
       </div>
+<!-- GF: Engine Status Card -->
+<section style="border:1px solid rgba(229,231,235,.14);border-radius:14px;padding:14px;background:rgba(255,255,255,.02);">
+  <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+    <div>
+      <div style="font-weight:700;">Engine Status</div>
+      <div id="gf-status-sub" style="font-size:12px;opacity:.85;">Loading…</div>
+    </div>
+    <div id="gf-status-pill" style="padding:6px 10px;border-radius:999px;font-size:12px;border:1px solid rgba(229,231,235,.18);">…</div>
+  </div>
+  <div id="gf-status-list" style="margin-top:10px;font-size:13px;line-height:1.6;"></div>
+</section>
 
+<script>
+(async () => {
+  const sub  = document.getElementById("gf-status-sub");
+  const pill = document.getElementById("gf-status-pill");
+  const list = document.getElementById("gf-status-list");
+
+  async function load(url) {
+    const r = await fetch(url, { cache: "no-store" });
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    return await r.json();
+  }
+
+  let data = null;
+
+  // Prefer public/status.json (publish mode)
+  try { data = await load("./public/status.json"); } catch (e) {}
+
+  // Fallback: status.json at root if you later move it
+  if (!data) { try { data = await load("./status.json"); } catch (e) {} }
+
+  if (!data) {
+    pill.textContent = "UNKNOWN";
+    sub.textContent = "No status file available yet.";
+    list.innerHTML =
+      "<div style='opacity:.85'>Run <code>pwsh -NoProfile -File ops/STATUS-ENGINE.ps1 -Publish</code> to generate <code>public/status.json</code>.</div>";
+    return;
+  }
+
+  pill.textContent = data.ok ? "GREEN" : "RED";
+  pill.style.borderColor = data.ok ? "rgba(34,197,94,.6)" : "rgba(239,68,68,.6)";
+  sub.textContent = `${data.time} · ${data.branch}@${data.sha}`;
+
+  const rows = (data.checks || []).map(c => {
+    const mark = c.ok ? "✅" : "❌";
+    return `<div>${mark} ${c.name}</div>`;
+  }).join("");
+
+  list.innerHTML = rows || "<div style='opacity:.85'>No checks</div>";
+})();
+</script>
       <div class="card">
         <div style="font-weight:900;font-size:16px;margin-bottom:8px">MVP Pipeline</div>
         <div class="grid3">
