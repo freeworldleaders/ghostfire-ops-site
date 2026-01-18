@@ -1,7 +1,7 @@
 param(
   [switch]$NoHigg,
   [switch]$NoMirror,
-  [switch]$NoWrite
+  [switch]$NoWrite = $true
 )
 
 $ErrorActionPreference = "Stop"
