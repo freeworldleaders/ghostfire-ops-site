@@ -1,5 +1,6 @@
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version Latest
+$script:fail = $false
 
 function Info($m){ Write-Host ("INFO: " + $m) -ForegroundColor Cyan }
 function Pass($m){ Write-Host ("PASS: " + $m) -ForegroundColor Green }
@@ -27,6 +28,5 @@ if (Test-Path $cb) {
 } else {
   Fail "Missing command-board.html"
 }
-
-if ($script:fail) { throw "POWER ENGINE FAILED (see FAIL lines above)" }
+if ((Get-Variable -Name fail -Scope Script -ErrorAction SilentlyContinue).Value -eq $true) { throw "POWER ENGINE FAILED (see FAIL lines above)" }
 Pass "POWER ENGINE COMPLETE"
